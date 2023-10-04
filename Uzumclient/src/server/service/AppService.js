@@ -48,9 +48,10 @@ export const GetCategoryList = async (setCategory) => {
     }
 }
 
-export const GetProductList = async (id) => {
+export const GetProductList = async () => {
     try {
         const res = await BaseConfig.doGet(Api.product)
+        return res.data
     } catch (err) {
         console.log(err)
         toast.error("xatolik")
@@ -117,15 +118,25 @@ export const UploadPhoto = async (photo) => {
     }
 
 }
-export const SaveBasketProducts = async (id) => {
+export const SaveBasketProducts =async (id)=>{
     try {
-        await BaseConfig.doPost(Api.basket + localStorage.getItem("id") + "&&Id=" + id)
-        toast.success("savatga saqlandi")
-    } catch (err) {
-        toast.error(err.response.data.message)
-        console.log(err.response.data.message)
+       await BaseConfig.doPost(Api.basket+localStorage.getItem("id"))
+        toast.success("saqlandi")
+    }catch (err){
+        console.log(err)
+        toast.error(err+"savatga qushishda hatolik")
     }
 }
+// export const SaveBasketProducts = async (id) => {
+//     try {
+//         await BaseConfig.doPost(Api.basket + localStorage.getItem("id") + "&Id=" + id.id)
+//         console.log(id)
+//         toast.success("savatga saqlandi")
+//     } catch (err) {
+//         toast.error(err.response.data.message)
+//         console.log(err)
+//     }
+// }
 export const getBasketProduct=async (id,setProduct)=> {
     try {
         const res = await BaseConfig.doGet(Api.basket + id)

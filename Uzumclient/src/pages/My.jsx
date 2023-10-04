@@ -5,8 +5,8 @@ import {Link, useLocation} from "react-router-dom";
 export const My = () => {
     const location = useLocation().pathname
     const barre = [
-        {name: "Ma'lumot", link: "/my/profile"},
-        {name: "Buyurtmalar", link: "/my/order"}
+        {name: "Buyurtmalar", link: "/my/order"},
+        {name: "Savat", link: "/my/basket"}
     ]
     return (
         localStorage.getItem("id") ? (
@@ -14,8 +14,7 @@ export const My = () => {
                 <form className={"d-flex mt-3 "} style={{marginLeft: "40%"}}>
                     {barre.map((item) => (
                         <Link to={item.link}
-                              className={location === item.link ? "btn btn-warning m-1" : "btn btn-outline-secondary m-1"}
-                              aria-current="page">
+                              className={location === item.link ? "btn btn-warning m-1" : "btn btn-outline-secondary m-1"} aria-current="page">
                             {item.name}
                         </Link>
                     ))}

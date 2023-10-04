@@ -21,10 +21,9 @@ function App() {
             <Routes>
                 <Route path={"/"} element={<Dashboard/>}>
                 </Route>
-                <Route path={"/my/profile"} element={<Profile/>}>
                     <Route path={"my/:id"} element={<My/>}/>
+                <Route path={"/my/profile"} element={<Profile/>}>
                 </Route>
-
                 <Route path={"/auth/login"} element={<Login/>}/>
                     <Route path={"/auth/register"} element={<Registers/>}/>
                 <Route path={"/auth/admin"} element={<AdminLayout/>}>

@@ -17,7 +17,8 @@ export const Product = () => {
 
     const getAll = async () => {
         try {
-            await GetProductList(setProducts)
+            const a = await GetProductList()
+            setProducts(a)
             const res = await axios.get(BaseUrl + "/category")
             setCategories(res.data._embedded.list)
             setLoading(true)

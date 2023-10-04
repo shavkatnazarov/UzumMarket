@@ -21,7 +21,6 @@ public class User extends AbsEntity implements UserDetails {
     @Column(nullable = false)
     private String firstName;
 
-    @Column(nullable = false)
     private String lastName;
     @OneToOne
     private SaveProduct saveProduct;
