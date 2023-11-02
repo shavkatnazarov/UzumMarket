@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {DeleteProduct, GetProductList, SaveProduct, UploadPhoto} from "../server/service/AppService.js";
+import {DeleteProduct, EditProduct, GetProductList, SaveProduct, UploadPhoto} from "../server/service/AppService.js";
 import axios from "axios";
 import {BaseUrl} from "../server/BaseUrl.js";
 import {Api} from "../server/Api.js";
@@ -236,7 +236,7 @@ const AddProduct = ({categories, getAll}) => {
                         ))}
                     </select>
 
-                    <label htmlFor="description" className={"m-2 text-primary"}>mahsulot haqida ma'lumot
+                    <label htmlFor="description" className={"m-2 text-primary"}>mahsulot haqxida ma'lumot
                         kiriting</label>
                     <textarea name="description" id="description" cols="47" rows="4" value={description}
                               onChange={e => setDescription(e.target.value)}/>
@@ -267,7 +267,7 @@ const EditProducts = ({categories, getAll, product}) => {
         let img = await UploadPhoto(file)
 
         const data = {
-            name, price, description, img
+            name, price, description,img
         }
 
         await EditProduct(data, product.id)

@@ -98,6 +98,7 @@ export const SaveProduct = async (data) => {
         await BaseConfig.doPost(Api.product, data)
         toast.success("saqlandi")
         console.log(data, Api.product)
+
     } catch (err) {
         console.log(err)
         console.log(err)

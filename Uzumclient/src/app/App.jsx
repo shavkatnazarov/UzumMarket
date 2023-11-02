@@ -1,4 +1,3 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {NotFound} from "../component/NotFound.jsx";
 import "../assets/css/style.css";
 import {Dashboard} from "../pages/Dashboard.jsx";
@@ -12,6 +11,9 @@ import {Profile} from "../pages/profil.jsx";
 import {My} from "../pages/My.jsx";
 import {Registers} from "../auth/Register.jsx";
 import {CategoryItem} from "../pages/CategoryItem.jsx";
+import {Basket} from "../pages/Basket.jsx";
+import {Order} from "../pages/Order.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 function App() {
     return (
@@ -25,6 +27,8 @@ function App() {
                 <Route path={"/my/profile"} element={<Profile/>}>
                 </Route>
                 <Route path={"/auth/login"} element={<Login/>}/>
+                    <Route path={"/my/order"} element={<Order/>}/>
+                    <Route path={"/my/basket"} element={<Basket/>}/>
                     <Route path={"/auth/register"} element={<Registers/>}/>
                 <Route path={"/auth/admin"} element={<AdminLayout/>}>
                     <Route path={"/auth/admin/category"} element={<Category/>}/>

@@ -30,7 +30,7 @@ public class ProductService implements IntProductService {
             productRepository.save(product);
             return new ApiResponse("Successfully saved", true);
         } catch (Exception e) {
-            return new ApiResponse("Xatolik", false);
+                return new ApiResponse("Xatolik", false);
         }
     }
 

@@ -7,6 +7,8 @@ import {Api} from "../server/Api.js";
 export const Body = () => {
     const [category, setCategory] = useState([])
     const [products, setProducts] = useState([]);
+    const [one, setOne] = useState({})
+
 
 
     const getAll = async () => {
@@ -99,10 +101,10 @@ export const checkUser = ({users, phoneNumber, navigate}) => {
         </>
     )
 }
-export const saveProduct = (id) => {
+export const saveProduct = (userId, id) => {
     const getAll = async () => {
         try {
-            await SaveBasketProducts(id);
+            await SaveBasketProducts(userId, id);
         } catch (err) {
             console.log(err)
         }

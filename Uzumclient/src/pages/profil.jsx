@@ -23,12 +23,7 @@ export const Profile = () => {
                     <h3 className={"text-center text-secondary"} style={{borderRadius:"12px"}}>ism {localStorage.getItem("firstName")}</h3>
 
                 </div>
-                {/*<label htmlFor="name" style={{marginLeft: "465px"}}>ism</label>*/}
-                {/*<input id={"name"} style={{width: "600px", marginLeft: "450px"}} type={"text"}*/}
-                {/*       className={"form-control"} placeholder={localStorage.getItem("firstName")}></input>*/}
-                {/*<label htmlFor="name" style={{marginLeft: "465px"}}>Familiya</label>*/}
-                {/*<input id={"surName"} style={{width: "600px", marginLeft: "450px"}} type={"text"}*/}
-                {/*       className={"form-control"} placeholder={localStorage.getItem("lastName")}></input>*/}
+
 
                 <button onClick={() => logout()} className={"btn btn-danger mt-3"}
                         style={{width: "250px", marginLeft: "760px"}}>Chiqish

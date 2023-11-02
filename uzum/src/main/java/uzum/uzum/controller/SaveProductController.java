@@ -14,16 +14,16 @@ import uzum.uzum.service.SaveProductService;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/basket")
+@RequestMapping("/api/v1/basket")
 @RequiredArgsConstructor
 public class SaveProductController {
     private final SaveProductService service;
     private final AuthRepository authRepository;
 
     @PostMapping
-    public HttpEntity<?> save(@RequestParam UUID id, @RequestParam Integer Id) {
+    public HttpEntity<?> save(@RequestParam UUID id, @RequestParam Integer IdI) {
         try {
-            ApiResponse apiResponse = service.saveProduct(id, Id);
+            ApiResponse apiResponse = service.saveProduct(id, IdI);
             return ResponseEntity.status(apiResponse.isSuccess() ? 200 : 409).body(apiResponse);
         } catch (Exception e) {
             return null;
@@ -31,8 +31,8 @@ public class SaveProductController {
     }
 
     @DeleteMapping("/{id}")
-    public HttpEntity<?> delete(@PathVariable UUID id, @RequestParam Integer Id) {
-        ApiResponse apiResponse = service.deleteProduct(id, Id);
+    public HttpEntity<?> delete(@PathVariable UUID id, @RequestParam Integer IdI) {
+        ApiResponse apiResponse = service.deleteProduct(id, IdI);
         return ResponseEntity.status(apiResponse.isSuccess() ? 200 : 409).body(apiResponse);
     }
 

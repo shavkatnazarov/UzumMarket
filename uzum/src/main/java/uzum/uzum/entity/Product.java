@@ -18,8 +18,8 @@ public class Product extends AbsNameEntity {
 
     @Column(name = "product_img")
     private UUID img;
-    @ManyToOne(optional = false)
-    private Category category;
+        @ManyToOne(optional = false)
+        private Category category;
 
     @Column(name = "product_description", length = 99999)
     private String description;
