@@ -13,6 +13,7 @@ export const EditProduct = async (data, id) => {
     if (check.name) {
         return toast.warning("mahsulot nomi bo'lishi shart")
     }
+
     if (check.price) {
         return toast.warning("mahsulot narxi bo'lishi shart")
     }
