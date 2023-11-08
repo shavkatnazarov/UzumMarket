@@ -8,7 +8,9 @@ public interface IntProductController {
 
     HttpEntity<?> getOneProduct(Integer id);
 
+
     HttpEntity<?> addProduct(ProductDto productDto);
+
 
     HttpEntity<?> editProduct(Integer id, ProductDto productDto);
 
