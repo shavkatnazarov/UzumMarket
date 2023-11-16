@@ -188,7 +188,7 @@ const AddProduct = ({categories, getAll}) => {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
     const [categoryId, setCategoryId] = useState('')
-    const [description, setDescription] = useState('')
+        const [description, setDescription] = useState('')
 
     const saveProduct = async () => {
         const file = new FormData()
@@ -242,7 +242,7 @@ const AddProduct = ({categories, getAll}) => {
                               onChange={e => setDescription(e.target.value)}/>
 
                     <label htmlFor="img" className={"m-2 text-primary"}>mahsulot rasmini yuklang</label>
-                    <input type="file" className={"form-control"} id={"img"} name={"img"}/>
+                        <input type="file" className={"form-control"} id={"img"} name={"img"}/>
 
                     <button type={"button"} onClick={() => saveProduct()} className={"btn btn-primary mt-3"}><i
                         className="bi bi-plus-circle"/>{" "}save

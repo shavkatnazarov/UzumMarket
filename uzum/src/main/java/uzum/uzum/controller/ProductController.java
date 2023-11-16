@@ -39,8 +39,6 @@ public class ProductController implements IntProductController {
         }
     }
 
-
-
     @PostMapping
     @Override
     public HttpEntity<?> addProduct(@RequestBody ProductDto productDto) {
